@@ -1,0 +1,201 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+    
+}
+div#collapsibleNavbar {
+    margin-right: 84px;
+    margin-left: -110px;
+}
+
+.choice-taskbar {
+    width: 100%;
+    font-family: 'Poppins',sans-serif;
+    color: #339FD5;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 12px;
+    background-color: rgb(249, 245, 245);
+   
+}
+.choice-taskbar-one a{
+    text-transform: uppercase;
+    margin: auto;
+}
+.choice-taskbar li:hover>a, li:hover, .btn-group.dropleft a:hover, .nav-item.dropdown a:hover{
+    background-color: rgb(51, 159, 213);
+    color: white;
+    text-decoration: none;
+}
+li.nav-item.choice-taskbar{
+    text-align: center;
+}
+
+header .main-content {
+    padding: 100px 5%;
+    background-color: rgb(222, 170, 223);
+}
+
+
+input.form-control.mr-sm-2, button.btn.btn-success{
+    border-radius: 12px;
+    height: 29px;
+    margin-right: -200%;
+    
+}
+button.btn.btn-success:hover{
+    background-color: rgb(51, 159, 213);
+}
+button.btn.btn-success {
+    padding: revert;
+    background-color: rgb(175, 210, 227);
+    border: none;
+}
+input.form-control.mr-sm-2{
+    width: 60%;
+}
+
+.login-logout  {
+    margin-right: -15%;
+    color: #339FD5;
+}
+
+
+#slider {
+    margin-top: 60px;
+    padding-top: 50%;
+    background: url('../images/bigstock-Portrait-of-cheerful-doctors-t-184651009.jpg') top center / cover no-repeat;
+    height: 90px;
+    color: white;
+    position: relative;
+}
+
+#slider .text-content {
+    position: absolute;
+    bottom: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#slider .text-header {
+    font-weight: 500px;
+    font-size: 24px;
+    padding-bottom: 25px;
+}
+
+#slider .text-description {
+    font-size: 15px;
+
+}
+.choice-list{
+    margin: 80px 0px 30px 0px;
+}
+
+.content-vaccine, .content-vaccine-dc{
+    margin: auto;
+
+}
+.content-vaccine img, .content-vaccine-dc img{
+    width: 100%;
+}
+.content-vaccine-dc h6{
+    color: #2A388F;
+    font-weight: bold;
+}
+.content-vaccine-dc p{
+    color: #6D6E70;
+}
+
+.content-vaccine img{
+    box-shadow: 0 0 3px #ccc;
+    margin: 15px 0;
+}
+.content-vaccine h6{
+    color: #377AB7;
+}
+
+.choice-list{
+    border-bottom: 1px solid black;
+}
+.choice-list h5{
+    color: #2A388F;
+    margin-left: -2%;
+    font-weight: bold;
+}
+.choice-list a{
+    color: #377AB7;
+    margin-left: 85%;
+   font-weight: bold;
+}
+.choice-list a:hover{
+    text-decoration: none;
+    color: #0d4b84;
+}
+
+
+
+footer a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.footer-contactus {
+    padding-left: 12%;
+    margin-bottom: 20px;
+}
+
+.title-about {
+    margin: 0 12%;
+}
+
+.leadership-content h1 {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin-top: 200px;
+
+    padding: 20px 10% 40px 10%;
+    background-color: rgb(190, 194, 215);
+}
+
+footer p {
+    font-weight: bolder;
+}
+
+.social-media img {
+    padding: 0 1%;
+}
+
+h1.title-about {
+    margin-bottom: 40px;
+}
+
+footer.about {
+    margin-top: 10px;
+}
+
+.col.col-sm.order-sm-first.col-md-5 {
+    padding-left: 2%;
+}
+
+.footer-contactus span.img-three {
+    background-color: green;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.footer-contactus span.img-two {
+   background-color: aqua;
+   padding: 4px;
+   border-radius: 5px;
+}
+
+.footer-contactus span.img-one {
+    background-color: blue;
+    padding: 4px;
+    border-radius: 5px;
+   }  

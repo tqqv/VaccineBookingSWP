@@ -1,0 +1,18 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 6, 2023, 3:24:21 PM
+    Author     : DELL VOSTRO 5510
+*/
+/*List vaccine table*/
+body {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.top-information,
+.bottom-information {
+    padding: 0 20px;
+}
