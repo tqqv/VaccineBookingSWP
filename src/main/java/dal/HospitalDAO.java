@@ -22,13 +22,13 @@ import org.apache.poi.ss.usermodel.Row;
 import model.Hospital;
 
 public class HospitalDAO extends DBContext {
-    Connection conn = null;
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-    MD5 md5 = new MD5();
-	public static void saveOnVaccineHistory(File uncomUserFile)
-			throws IOException, ParseException {		
-		////Current solution
+	static Connection conn = null;
+	static PreparedStatement ps = null;
+	static ResultSet rs = null;
+	static MD5 md5 = new MD5();
+
+	public static void saveOnVaccineHistory(File uncomUserFile) throws IOException, ParseException {
+		//// Current solution
 //		SOlU 2: 
 //		1: Create 1 column on appointment table store detail which set by default is come. ✅
 //		2: Hospital give excel |idAppointment& detailDontCome| => handle it into excelIds []
@@ -68,12 +68,12 @@ public class HospitalDAO extends DBContext {
 			PreparedStatement stmtDelete = conn.prepareStatement(deleteOnA);
 			ResultSet rs = stmt.executeQuery();
 			stmtDelete.executeUpdate();
-			while(rs.next()) {
+			while (rs.next()) {
 				stmtInsert.setString(1, rs.getString(2));
 				stmtInsert.setInt(2, VaccineDAO.getIdVacByIdAP(rs.getInt(4)));
 				stmtInsert.setDate(3, VaccineDAO.getVacTimeByIdAP(rs.getInt(4)));
 				stmtInsert.setInt(4, rs.getInt(6));
-				stmtInsert.setInt(5, VaccineDAO.getIdHosByIdAP(rs.getInt(4))); 
+				stmtInsert.setInt(5, VaccineDAO.getIdHosByIdAP(rs.getInt(4)));
 				stmtInsert.executeUpdate();
 			}
 			System.out.println("Finish handle excel file!");
@@ -83,102 +83,108 @@ public class HospitalDAO extends DBContext {
 
 	}
 
-	public List<Hospital> getAllHospital() {
-        List<Hospital> list = new ArrayList<>();
-        String query = "select * from hospital";
-        try {
-            conn = new DBContext().getConnect();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                list.add(new Hospital(rs.getInt(1), rs.getString(2), rs.getString(3),
-                        rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7)));
-            }
-        } catch (Exception e) {
-        }
-        return list;
-    }
-	
-	
-    public void insertHospital(String name, String address, String email, String hotline, String username, String password) {
-        String query = "INSERT INTO hospital "
-                + "(name, address, email, hotline, username, password)\n"
-                + "VALUES (?,?,?,?,?,?);";
-        try {
-            conn = new DBContext().getConnect();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            ps.setString(1, name);
-            ps.setString(2, address);
-            ps.setString(3, email);
-            ps.setString(4, hotline);
-            ps.setString(5, username);
-            ps.setString(6, password);
-            ps.executeUpdate();
-        } catch (Exception e) {
-        }
-    }
+	public static List<Hospital> getAllHospital() {
+		List<Hospital> list = new ArrayList<>();
+		String query = "select * from hospital";
+		try {
+			conn = new DBContext().getConnect();// mo ket noi voi sql
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			while (rs.next()) {
 
-    public void updateHospital(int id, String name, String address, String email, String hotline, String username, String password) {
-        String query = "UPDATE hospital "
-                + "SET name = ?, address = ?, email = ?, "
-                + "hotline = ?, username = ?, password = ? "
-                + "WHERE idBV = ?";
-        try {
-            conn = new DBContext().getConnect();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            ps.setString(1, name);
-            ps.setString(2, address);
-            ps.setString(3, email);
-            ps.setString(4, hotline);
-            ps.setString(5, username);
-            ps.setString(6, password);
-            ps.setInt(7, id);
-            ps.executeUpdate();
-        } catch (Exception e) {
-        }
-    }
-  
-    public void deleteHospital(String dhid) {
-        String query = "DELETE FROM hospital WHERE idBV = ?";
-        try {
-            conn = new DBContext().getConnect();//mo ket noi voi sql
-            ps = conn.prepareStatement(query);
-            ps.setString(1, dhid);
-            ps.executeUpdate();
-        } catch (Exception e) {
-        }
-    }
-	
-    public Hospital findHospital(String email, String password) {
-        try {
-            String sql = "select * from [hospital] where [email] = ? and [password] = ?";
-            conn = new DBContext().getConnect();
-            PreparedStatement stm = conn.prepareStatement(sql);
-            stm.setString(1, email);
-            stm.setString(2, md5.getMd5(password));
-            ResultSet rs = stm.executeQuery();
-            if (rs.next()) {
-                Hospital s = new Hospital();
-                s.setIdBV(rs.getInt("idH"));
-                s.setName(rs.getString("name"));
-                s.setAddress(rs.getString("address"));
-                s.setEmail(rs.getString("email"));
-                s.setHotline(rs.getString("hotline"));
-                s.setUsername(rs.getString("username"));
-                s.setPassword(rs.getString("password"));
-                return s;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-    
+				list.add(new Hospital(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
+						rs.getString(6), rs.getString(7)));
+			}
+		} catch (Exception e) {
+		}
+		return list;
+	}
+
+	public static void insertHospital(String name, String address, String email, String hotline, String username,
+			String password) {
+		String query = "INSERT INTO hospital " + "(name, address, email, hotline, username, password)\n"
+				+ "VALUES (?,?,?,?,?,?);";
+		try {
+			conn = new DBContext().getConnect();// mo ket noi voi sql
+			ps = conn.prepareStatement(query);
+			ps.setString(1, name);
+			ps.setString(2, address);
+			ps.setString(3, email);
+			ps.setString(4, hotline);
+			ps.setString(5, username);
+			ps.setString(6, password);
+			ps.executeUpdate();
+		} catch (Exception e) {
+		}
+	}
+
+	public static void updateHospital(int id, String name, String address, String email, String hotline,
+			String username, String password) {
+		String query = "UPDATE hospital " + "SET name = ?, address = ?, email = ?, "
+				+ "hotline = ?, username = ?, password = ? " + "WHERE idH = ?";
+		try {
+			conn = new DBContext().getConnect();// mo ket noi voi sql
+			ps = conn.prepareStatement(query);
+			ps.setString(1, name);
+			ps.setString(2, address);
+			ps.setString(3, email);
+			ps.setString(4, hotline);
+			ps.setString(5, username);
+			ps.setString(6, password);
+			ps.setInt(7, id);
+			ps.executeUpdate();
+		} catch (Exception e) {
+		}
+	}
+
+	public static void deleteHospital(String dhid) {
+		String query = "DELETE FROM hospital WHERE idH = ?";
+		try {
+			conn = new DBContext().getConnect();// mo ket noi voi sql
+			ps = conn.prepareStatement(query);
+			ps.setString(1, dhid);
+			ps.executeUpdate();
+		} catch (Exception e) {
+		}
+	}
+
+	public static Hospital findHospital(String email, String password) {
+		try {
+			String sql = "select * from [hospital] where [email] = ? and [password] = ?";
+			conn = new DBContext().getConnect();
+			PreparedStatement stm = conn.prepareStatement(sql);
+			stm.setString(1, email);
+			stm.setString(2, md5.getMd5(password));
+			ResultSet rs = stm.executeQuery();
+			if (rs.next()) {
+				Hospital s = new Hospital();
+				s.setIdBV(rs.getInt("idH"));
+				s.setName(rs.getString("name"));
+				s.setAddress(rs.getString("address"));
+				s.setEmail(rs.getString("email"));
+				s.setHotline(rs.getString("hotline"));
+				s.setUsername(rs.getString("username"));
+				s.setPassword(rs.getString("password"));
+				return s;
+			}
+		} catch (SQLException ex) {
+			Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		return null;
+	}
+
 	public static void main(String[] args) throws IOException, ParseException {
 		File fi = new File("C:\\vaccine\\23-05-2023-uncome.xls");
 		String date = fi.getName().substring(0, 10);
 
-		HospitalDAO.saveOnVaccineHistory(fi);
+//		HospitalDAO.saveOnVaccineHistory(fi);
+//		for (Hospital h : HospitalDAO.getAllHospital()) {
+//			System.out.println(h);
+//		}
+		
+		Hospital h = HospitalDAO.findHospital("asabitaGmail.com", "11111111");
+		
+		System.out.println(h);
 	}
 
 }

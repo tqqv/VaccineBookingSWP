@@ -73,6 +73,8 @@ public class Notification {
 	
 	
 	public static void main(String[] args) {
-		new Notification("TEST", "nomnom15062002@gmail.com","hi").sendMail();
+		
+		System.out.println("Nhaan kHung vlog");
+//		System.out.println(new Notification("TEST", "nomnom15062002@gmail.com","hi").RandGeneratedStr(4));
 	}
 }

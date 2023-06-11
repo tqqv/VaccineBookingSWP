@@ -26,8 +26,6 @@ public class AdminDAO extends DBContext {
 
 
 	public static void main(String[] args) throws IOException, ParseException {
-		File fi = new File("C:\\vaccine\\23-05-2023-uncome.xls");
-		String date = fi.getName().substring(0, 10);
 
 	}
 }

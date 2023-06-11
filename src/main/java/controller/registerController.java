@@ -35,6 +35,7 @@ public class registerController extends HttpServlet {
         String healthInsurance = request.getParameter("healthInsurance");
         Date dob = Date.valueOf(request.getParameter("dob"));
         UserDAO db = new UserDAO();
+        System.out.println("email: " + email);
         User u = db.findUserByEmail(email);
         User i = db.findIdentification(identification);
         User p = db.findPhone(phone);

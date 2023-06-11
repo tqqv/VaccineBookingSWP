@@ -53,7 +53,9 @@ public class vertificationEmail extends HttpServlet {
         Date dob = (Date) session.getAttribute("dob");
         UserDAO db = new UserDAO();
         if (vertification.equals(otp)) {
+        	System.out.println(name +"\n " + pass+"\n "+ dob +"\n "+ gender+"\n "+ phone +"\n "+ email +"\n "+ healthInsurance);
            db.register(name, pass, identification, dob, gender, phone, email, healthInsurance, 1);
+           System.out.println("Come");
             request.getSession().setAttribute("id",(db.findUserByEmail(email)).getIdUser() );
             request.getSession().setAttribute("role", 1);
             request.getSession().removeAttribute("otp");
@@ -64,7 +66,6 @@ public class vertificationEmail extends HttpServlet {
             request.getSession().removeAttribute("phone");
             request.getSession().removeAttribute("email");
             request.getSession().removeAttribute("healthInsurance");
-//System.out.println(name+ pass+ identification+ dob+ gender+ phone+ email+ healthInsurance);
             response.sendRedirect("home.jsp");
             return;
 
