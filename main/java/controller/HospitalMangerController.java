@@ -12,7 +12,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.AppointmentByIdHospital;
+
+import model.Appointment;
 import model.VaccineProvision;
 
 
@@ -28,15 +29,11 @@ public class HospitalMangerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            AppointmentDAO scheduleDAO = new AppointmentDAO();
+            AppointmentDAO appointmentDAO = new AppointmentDAO();
             String hospitalId = "1";
-            List<AppointmentByIdHospital> appointments = AppointmentDAO.getAppointmentsByHospitalId(hospitalId);
+            List<Appointment> appointments = AppointmentDAO.getAppointmentsByHospitalId(hospitalId);
 
             request.setAttribute("appointments", appointments);
-        } catch (SQLException ex) {
-            Logger.getLogger(HospitalMangerController.class.getName()).log(Level.SEVERE, null, ex);
-        }
 
         VaccineDAO dao = new VaccineDAO();
         String idHVP = "1";

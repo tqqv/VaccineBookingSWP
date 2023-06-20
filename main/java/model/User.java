@@ -18,7 +18,10 @@ public class User {
     public User() {
     }
 
-    public User(int idUser, String username, String password, String identification, Date dob, boolean gender, String phone, String email, String healthInsurance, int role) {
+    public User(int idUser, String username, String password, 
+    		String identification, Date dob, 
+    		boolean gender, String phone, String email,
+    		String healthInsurance, int role) {
         this.idUser = idUser;
         this.username = username;
         this.password = password;

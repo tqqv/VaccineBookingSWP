@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+
+<!-- 02_05_gallery.html  [XR&CO'2014], Tue, 22 Oct 2019 11:55:03 GMT -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02_05_gallery</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="plugin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="plugin/bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="fonts/poppins/poppins.css">
+    <link rel="stylesheet" href="plugin/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugin/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="plugin/process-bar/tox-progress.css">
+    <link rel="stylesheet" href="plugin/owl-carouse/owl.carousel.min.css">
+    <link rel="stylesheet" href="plugin/owl-carouse/owl.theme.default.min.css">
+    <link rel="stylesheet" href="plugin/animsition/css/animate.css">
+    <link rel="stylesheet" href="plugin/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="plugin/mediaelement/mediaelementplayer.css">
+    <link rel="stylesheet" href="plugin/datetimepicker/bootstrap-datepicker3.css">
+    <link rel="stylesheet" href="plugin/datetimepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="plugin/lightgallery/lightgallery.css">
+    <link rel="stylesheet" href="css/styleHome.css">
+    <style>
+        /* Custom CSS */
+        .product-table {
+            width: 100%;
+        }
+
+        .product-table th,
+        .product-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .product-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+    <!-- Thêm liên kết Bootstrap CSS vào phần head của trang -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!--load page-->
+    <div class="load-page">
+        <div class="sk-wave">
+            <div class="sk-rect sk-rect1"></div>
+            <div class="sk-rect sk-rect2"></div>
+            <div class="sk-rect sk-rect3"></div>
+            <div class="sk-rect sk-rect4"></div>
+            <div class="sk-rect sk-rect5"></div>
+        </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="visible-sm visible-xs mobile-menu-container mobile-nav">
+        <div class="menu-mobile-nav navbar-toggle">
+            <span class="icon-bar"><i class="fa fa-bars" aria-hidden="true"></i></span>
+        </div>
+        <div id="cssmenu" class="animated">
+            <div class="uni-icons-close"><i class="fa fa-times" aria-hidden="true"></i></div>
+            <ul class="nav navbar-nav animated">
+                <li><a href="index.html">Home</a></li>
+                <li class="has-sub"><a href='#'>List Vaccine</a>
+                    <ul>
+                        <li><a href="list_of_vaccine.html">List Vaccine</a></li>
+                        <li><a href="detail_vaccine.html">Detail Vaccine</a></li>
+                    </ul>
+                </li>
+                <li><a href="03_01_services.html">Booking Schedules</a></li>
+                <li class="has-sub"><a href="#">Departments</a>
+                    <ul>
+                        <li><a href="04_01_departments.html">Departments</a></li>
+                        <li><a href="04_02_single_department.html">Single
+                                Departments</a></li>
+                    </ul>
+                </li>
+                <li class="has-sub hover-element"><a href='#'>Shortcode</a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </nav>
+    <!-- End mobile menu -->
+
+    <div class="uni-gallery">
+        <div id="wrapper-container" class="site-wrapper-container">
+            <header>
+                <div class="uni-medicare-header sticky-menu">
+                    <div class="container">
+                        <div class="uni-medicare-header-main">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <!--LOGO-->
+                                    <div class="wrapper-logo">
+                                        <a class="logo-default" href="#"><img src="images/logo.png" alt=""
+                                                class="img-responsive"></a>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <!--MENU TEXT-->
+                                    <div class="uni-main-menu">
+                                        <nav class="main-navigation uni-menu-text">
+                                            <div class="cssmenu">
+                                                <ul>
+                                                    <li><a href="index.html">Home</a></li>
+                                                    <li class="has-sub"><a href='#'>List Vaccine</a>
+                                                        <ul>
+                                                            <li><a href="list_of_vaccine.html">List Vaccine</a></li>
+                                                            <li><a href="detail_vaccine.html">Detail Vaccine</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="03_01_services.html">Booking Schedules</a></li>
+                                                    <li class="has-sub"><a href="#">Departments</a>
+                                                        <ul>
+                                                            <li><a href="04_01_departments.html">Departments</a></li>
+                                                            <li><a href="04_02_single_department.html">Single
+                                                                    Departments</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="has-sub hover-element"><a href='#'>Shortcode</a></li>
+                                                </ul>
+                                            </div>
+                                        </nav>
+                                    </div>
+
+                                    <!--SEARCH AND APPOINTMENT-->
+                                    <div class="uni-search-appointment">
+                                        <ul>
+                                            <li class="un-btn-search">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </li>
+                                            <li class="uni-btn-appointment">
+                                                <a href="#">Appointment</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--FORM SEARCH-->
+                            <div class="uni-form-search-header">
+                                <div class="box-search-header collapse" id="box-search-header">
+                                    <div class="uni-input-group">
+                                        <input type="text" name="key" placeholder="Search" class="form-control">
+                                        <button class="uni-btn btn-search">
+                                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div id="main-content" class="site-main-content">
+                <section class="site-content-area">
+
+                    <div class="uni-banner-default uni-background-1">
+                        <div class="container">
+                            <!-- Page title -->
+                            <div class="page-title">
+                                <div class="page-title-inner">
+                                    <h1>Gallery</h1>
+                                </div>
+                            </div>
+                            <!-- End page title -->
+
+                            <!-- Breadcrumbs -->
+                            <ul class="breadcrumbs">
+                                <li><a href="#">home</a></li>
+                                <li><a href="#">page</a></li>
+                                <li><a href="#">Gallery</a></li>
+                            </ul>
+                            <!-- End breadcrumbs -->
+                        </div>
+                    </div>
+
+                    <!-- Mã HTML và bảng sản phẩm -->
+                    <div class="uni-gallery-body">
+                        <div class="container">
+                            <div class="uni-shortcode-tabs-default">
+                                <div class="uni-shortcode-tab-2">
+                                    <div class="tabbable-panel">
+                                        <div class="tabbable-line">
+                                            <ul class="nav nav-tabs">
+                                                <li class="active">
+                                                    <a href="#tab_default_1" data-toggle="tab" aria-expanded="false">All
+                                                        Vaccine</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="#tab_default_2" data-toggle="tab"
+                                                        aria-expanded="true">Vaccine Covid-19</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="#tab_default_3" data-toggle="tab"
+                                                        aria-expanded="false">Vaccine Rubella</a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="tab_default_1">
+                                                    <div class="row" id="lightgallery1">
+                                                        <table class="product-table table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Product Name</th>
+                                                                    <th>Description</th>
+                                                                    <th>Price</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Product 1</td>
+                                                                    <td>Description 1</td>
+                                                                    <td>$10.99</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Product 2</td>
+                                                                    <td>Description 2</td>
+                                                                    <td>$19.99</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane" id="tab_default_2">
+                                                    <div class="row" id="lightgallery2">
+                                                        <table class="product-table table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Product Name</th>
+                                                                    <th>Description</th>
+                                                                    <th>Price</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Product 3</td>
+                                                                    <td>Description 3</td>
+                                                                    <td>$15.99</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Product 4</td>
+                                                                    <td>Description 4</td>
+                                                                    <td>$12.99</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane" id="tab_default_3">
+                                                    <div class="row" id="lightgallery3">
+                                                        <table class="product-table table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Product Name</th>
+                                                                    <th>Description</th>
+                                                                    <th>Price</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Product 5</td>
+                                                                    <td>Description 5</td>
+                                                                    <td>$8.99</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Product 6</td>
+                                                                    <td>Description 6</td>
+                                                                    <td>$14.99</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </section>
+            </div>
+
+            <footer class="site-footer footer-default">
+                <div class="footer-main-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="footer-main-content-elements">
+                                <div class="footer-main-content-element col-md-3 col-sm-6">
+                                    <aside class="widget">
+                                        <div class="widget-title uni-uppercase"><a href="#"><img
+                                                    src="images/logowhite.png" alt="" class="img-responsive"></a></div>
+                                        <div class="widget-content">
+                                            <p>
+                                                Pellentesque habitant morbi tristique senectus et netus et malesuada
+                                                fame ac
+                                                turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.
+                                            </p>
+                                            <div class="uni-info-contact">
+                                                <ul>
+                                                    <li> <i class="fa fa-map-marker" aria-hidden="true"></i> 45 Queen's
+                                                        Park Rd, Brighton, UK</li>
+                                                    <li><i class="fa fa-phone" aria-hidden="true"></i> (094) 123 4567 -
+                                                        (094) 123 4568</li>
+                                                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                                        medicareplus@domain.com</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+                                <div class="footer-main-content-element col-md-3 col-sm-6">
+                                    <aside class="widget">
+                                        <h3 class="widget-title uni-uppercase">quick links</h3>
+                                        <div class="widget-content">
+                                            <div class="uni-quick-link">
+                                                <ul>
+                                                    <li><a href="#"><span>+</span> Home</a></li>
+                                                    <li><a href="#"><span>+</span> about</a></li>
+                                                    <li><a href="#"><span>+</span> services</a></li>
+                                                    <li><a href="#"><span>+</span> timetable</a></li>
+                                                    <li><a href="#"><span>+</span> blog</a></li>
+                                                    <li><a href="#"><span>+</span> contact</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+                                <div class="footer-main-content-element col-md-3 col-sm-6">
+                                    <aside class="widget">
+                                        <h3 class="widget-title uni-uppercase">latest posts</h3>
+                                        <div class="widget-content">
+                                            <div class="uni-footer-latest-post">
+                                                <ul>
+                                                    <li>
+                                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetuer</a>
+                                                        </h4>
+                                                        <span class="time">june 12, 2017</span>
+                                                    </li>
+                                                    <li>
+                                                        <h4><a href="#">Aliquam tincidunt mauris eu risus amet</a></h4>
+                                                        <span class="time">june 12, 2017</span>
+                                                    </li>
+                                                    <li>
+                                                        <h4><a href="#">Morbi in sem quis dui placerat ornare column</a>
+                                                        </h4>
+                                                        <span class="time">june 12, 2017</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+                                <div class="footer-main-content-element col-md-3 col-sm-6">
+                                    <aside class="widget">
+                                        <h3 class="widget-title uni-uppercase">News<span>letter</span></h3>
+                                        <div class="widget-content">
+                                            <div class="uni-footer-newletter">
+                                                <div class="input-group">
+                                                    <input type="email" class="form-control"
+                                                        placeholder="Enter your email">
+                                                    <button class="btn btn-sub" type="submit">subscribe</button>
+                                                </div>
+                                                <div class="uni-social">
+                                                    <h4>Follow us</h4>
+                                                    <ul>
+                                                        <li><a href="#"><i class="fa fa-facebook"
+                                                                    aria-hidden="true"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-twitter"
+                                                                    aria-hidden="true"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-google-plus"
+                                                                    aria-hidden="true"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-youtube-play"
+                                                                    aria-hidden="true"></i></a></li>
+                                                        <li><a href="#"><i class="fa fa-instagram"
+                                                                    aria-hidden="true"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-area">
+                    <div class="container">
+                        <div class="copyright-content">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <p class="copyright-text"><a href="templateshub.net">Templateshub</a></p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <ul class="copyright-menu">
+                                        <li><a href="#">Term Of Use</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="plugin/jquery/jquery-2.0.2.min.js"></script>
+    <script src="plugin/jquery-ui/jquery-ui.min.js"></script>
+    <script src="plugin/bootstrap/js/bootstrap.js"></script>
+    <script src="plugin/process-bar/tox-progress.js"></script>
+    <script src="plugin/waypoint/jquery.waypoints.min.js"></script>
+    <script src="plugin/counterup/jquery.counterup.min.js"></script>
+    <script src="plugin/owl-carouse/owl.carousel.min.js"></script>
+    <script src="plugin/jquery-ui/jquery-ui.min.js"></script>
+    <script src="plugin/mediaelement/mediaelement-and-player.js"></script>
+    <script src="plugin/masonry/masonry.pkgd.min.js"></script>
+    <script src="plugin/datetimepicker/moment.min.js"></script>
+    <script src="plugin/datetimepicker/bootstrap-datepicker.min.js"></script>
+    <script src="plugin/datetimepicker/bootstrap-datepicker.tr.min.js"></script>
+    <script src="plugin/datetimepicker/bootstrap-datetimepicker.js"></script>
+    <script src="plugin/datetimepicker/bootstrap-datetimepicker.fr.js"></script>
+
+    <script src="plugin/lightgallery/picturefill.min.js"></script>
+    <script src="plugin/lightgallery/lightgallery.js"></script>
+    <script src="plugin/lightgallery/lg-pager.js"></script>
+    <script src="plugin/lightgallery/lg-autoplay.js"></script>
+    <script src="plugin/lightgallery/lg-fullscreen.js"></script>
+    <script src="plugin/lightgallery/lg-zoom.js"></script>
+    <script src="plugin/lightgallery/lg-hash.js"></script>
+    <script src="plugin/lightgallery/lg-share.js"></script>
+    <script src="plugin/sticky/jquery.sticky.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

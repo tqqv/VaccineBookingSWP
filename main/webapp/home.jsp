@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Document</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/styleHome.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="css/bootstrap-4.0.0-dist/css/bootstrap-grid.css" rel="stylesheet" type="text/css"/>
 </head>

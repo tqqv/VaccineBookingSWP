@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Dynamic Calendar JavaScript | CodingNepal</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Font Link for Icons -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+<script src="assets/js/calendar.js" defer></script>
+<link rel="stylesheet" type="text/css" href="assets/css/calendar.css" />
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<p class="current-date"></p>
+			<div class="icons">
+				<span id="prev" class="material-symbols-rounded">chevron_left</span>
+				<span id="next" class="material-symbols-rounded">chevron_right</span>
+			</div>
+		</header>
+		<div class="calendar">
+			<ul class="weeks">
+				<li>Sun</li>
+				<li>Mon</li>
+				<li>Tue</li>
+				<li>Wed</li>
+				<li>Thu</li>
+				<li>Fri</li>
+				<li>Sat</li>
+			</ul>
+			<ul class="days"></ul>
+		</div>
+	</div>
+	<div>-------</div>
+	<div class="wrapper times">
+		<h4>Times</h4>
+		<ul id="timesList">
+			<li class="row">
+				<div class="col">
+					<input type="checkbox" id="time1" name="time"> <label
+						for="time1">9:00 AM - 10:00 AM</label>
+				</div>
+				<div class="col">
+					<input type="checkbox" id="time2" name="time"> <label
+						for="time2">10:00 AM - 11:00 AM</label>
+				</div>
+			</li>
+			<li class="row">
+				<div class="col">
+					<input type="checkbox" id="time3" name="time"> <label
+						for="time3">11:00 AM - 12:00 PM</label>
+				</div>
+				<div class="col">
+					<input type="checkbox" id="time4" name="time"> <label
+						for="time4">12:00 PM - 1:00 PM</label>
+				</div>
+			</li>
+			<li class="row">
+				<div class="col">
+					<input type="checkbox" id="time5" name="time"> <label
+						for="time5">1:00 PM - 2:00 PM</label>
+				</div>
+				<div class="col">
+					<input type="checkbox" id="time6" name="time"> <label
+						for="time6">2:00 PM - 3:00 PM</label>
+				</div>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<div>
+					<p>Selected Time</p>
+					<p id="selectedTime"></p>
+				</div>
+				<div class="btn-group" role="group" aria-label="Button group">
+					<button type="button" class="btn btn-secondary" onclick="prevTab()">Previous</button>
+					<button type="button" class="btn btn-primary ml-2"
+						onclick="nextTab()">Next</button>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div>-------</div>
+	<div class="wrapper vaccines">
+		<div class="col-sm-6">
+
+			<h4>Vaccines Providing</h4>
+			<ul id="vaccineList">
+				<li class="row">
+					<div class="col">
+						<input type="checkbox" id="vaccine1" name="vaccine"> <label
+							for="vaccine1">Vaccine 1</label> <input type="text"
+							name="vaccine1Quantity" id="" placeholder="quantity">
+					</div>
+					<div class="col">
+						<input type="checkbox" id="vaccine2" name="vaccine"> <label
+							for="vaccine2">Vaccine 2 </label> <input type="text"
+							name="vaccine2Quantity" id="" placeholder="quantity">
+					</div>
+				</li>
+				<li class="row">
+					<div class="col">
+						<input type="checkbox" id="vaccine3" name="vaccine"> <label
+							for="vaccine3">Vaccine 3 </label> <input type="text"
+							name="vaccine3Quantity" id="" placeholder="quantity">
+					</div>
+					<div class="col">
+						<input type="checkbox" id="vaccine4" name="vaccine"> <label
+							for="vaccine4">Vaccine 4 </label> <input type="text"
+							name="vaccine4Quantity" id="" placeholder="quantity">
+					</div>
+				</li>
+				<li class="row">
+					<div class="col">
+						<input type="checkbox" id="vaccine5" name="vaccine"> <label
+							for="vaccine5">Vaccine 5 </label> <input type="text"
+							name="vaccine5Quantity" id="" placeholder="quantity">
+					</div>
+					<div class="col">
+						<input type="checkbox" id="vaccine6" name="vaccine"> <label
+							for="vaccine6">Vaccine 6 </label> <input type="text"
+							name="vaccine6Quantity" id="" placeholder="quantity">
+					</div>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+	<a href="UpdateAppointment">update</a>
+</body>
+</html>

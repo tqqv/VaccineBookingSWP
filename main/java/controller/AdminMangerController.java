@@ -34,7 +34,7 @@ public class AdminMangerController extends HttpServlet {
         HospitalDAO daoH = new HospitalDAO();
         
         try {
-            List<VaccineProvision> vaccineList = dao.getVaccineListwithHospital();
+            List<VaccineProvision> vaccineList = dao.getAllVaccineWithHospital();
             request.setAttribute("vaccineList", vaccineList);
         } catch (Exception ex) {
             Logger.getLogger(AdminMangerController.class.getName()).log(Level.SEVERE, null, ex);

@@ -14,6 +14,10 @@ import model.VaccineProvision;
 
 public class VaccineDAO extends DBContext {
 
+    Connection conn = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+
 	public static int getIdVacByIdAP(int int1) {
 		int idVaccine = -1;
 		String getIdSql = "Select [idVaccineAP] from [vaccine].[dbo].[appointment_provision] where [idAppointmentProvision] = "
@@ -70,10 +74,6 @@ public class VaccineDAO extends DBContext {
 	}
 
 
-    Connection conn = null;
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-
     public List<Vaccine> getAllVaccine() {
         List<Vaccine> list = new ArrayList<>();
         String query = "select * from vaccine";
@@ -89,7 +89,7 @@ public class VaccineDAO extends DBContext {
         return list;
     }
 
-    public List<VaccineProvision> getVaccineListwithHospital() throws SQLException, Exception {
+    public List<VaccineProvision> getAllVaccineWithHospital() {
         List<VaccineProvision> vaccines = new ArrayList<>();
 
         String query = "SELECT vp.idVaccineVP AS id, v.name AS name, v.detail AS detail, vp.pricePerService AS price, h.name AS hospital "
@@ -113,19 +113,23 @@ public class VaccineDAO extends DBContext {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            if (rs != null) {
-                rs.close();
-            }
-            if (ps != null) {
-                ps.close();
-            }
-            if (conn != null) {
-                conn.close();
-            }
-        }
+        } 
 
         return vaccines;
+    }
+    public static int getIdVacByName(String nameVaccine) {
+        String sql = "SELECT [idVaccine] FROM [vaccine].[dbo].[vaccine] WHERE [name] = ?";
+        try (Connection conn = getConnect()) {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, nameVaccine); // Set the parameter value
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                return rs.getInt("idVaccine");
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(VaccineDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1;
     }
 
     public List<VaccineProvision> getVaccinePerHospital(String userId) throws SQLException {
@@ -303,8 +307,8 @@ public class VaccineDAO extends DBContext {
 
 	public static void main(String[] args) {
 //		System.out.println(getIdVacFrIdAP(2));
-//		System.out.println(getVacTimeByIdAP(2));
-		System.out.println(getIdHosByIdAP(2));
+		System.out.println(getVacTimeByIdAP(5));
+//		System.out.println(getIdHosByIdAP(2));
 	}
 
 }

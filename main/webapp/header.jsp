@@ -85,7 +85,7 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="login.jsp">Login</a>
                         <a class="dropdown-item" href="logoutController">Logout</a>
-                        <a class="dropdown-item" href="editProfile.jsp">Edit profile</a>
+                        <a class="dropdown-item" href="userProfile">Edit profile</a>
                     </div>
 
                 </div>

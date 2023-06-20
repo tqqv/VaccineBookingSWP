@@ -1,0 +1,20 @@
+@media only screen and (max-width: 767px) {
+    h1 {
+      text-align: center;
+    }
+    .user-profile {
+      max-width: 550px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    .form-group{
+        margin-top: 100px!important;
+    }
+    .form-group input{
+      display: block;
+      margin-bottom: 20px;
+    }
+    .userinfor li {
+      margin-top: 50px!important;
+    }
+  }
