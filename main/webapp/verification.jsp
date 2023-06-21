@@ -1,8 +1,3 @@
-<%-- 
-    Document   : verification
-    Created on : May 31, 2023, 9:34:29 AM
-    Author     : DELL
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,7 +10,7 @@
     <body>
 
 
-        <form action="vertificationEmail" method="get">
+        <form action="vertificationEmailController" method="get">
             <div action="" class="email-form">
             <h1>Your Verification Code</h1>
             <P>Enter this verification code in field:</P>

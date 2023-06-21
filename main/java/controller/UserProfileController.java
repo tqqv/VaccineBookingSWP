@@ -24,8 +24,8 @@ import model.User;
  *
  * @author DELL
  */
-@WebServlet(name = "userProfile", urlPatterns = {"/userProfileController"})
-public class userProfileController extends HttpServlet {
+@WebServlet(urlPatterns = {"/UserProfileController"})
+public class UserProfileController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -64,7 +64,7 @@ public class userProfileController extends HttpServlet {
             response.sendRedirect("user_profile.jsp#profileForm");
 
         } catch (Exception ex) {
-            Logger.getLogger(userProfileController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserProfileController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -104,7 +104,7 @@ public class userProfileController extends HttpServlet {
             response.sendRedirect("userProfile");
             response.sendRedirect("user_profile.jsp#infor");
         } catch (Exception ex) {
-            Logger.getLogger(userProfileController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserProfileController.class.getName()).log(Level.SEVERE, null, ex);
         }
     } 
 

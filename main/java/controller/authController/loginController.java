@@ -17,7 +17,7 @@ import model.Hospital;
 import model.User; 
   
 @WebServlet(name = "loginController", urlPatterns = { "/login" })
-public class loginController extends HttpServlet {
+public class loginController extends HttpServlet { 
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

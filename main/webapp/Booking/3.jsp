@@ -132,7 +132,7 @@
                                                                                                     var date = "${date}";
                                                                                                     console.log("date: " + date);
 
-                                                                                                    var url = "makeAppointmentController?date=" + encodeURIComponent(date)
+                                                                                                    var url = "MakeAppointmentController?date=" + encodeURIComponent(date)
                                                                                                             + "&timeRange=" + encodeURIComponent(selectedTimeRange)
                                                                                                             + "&idVaccine=" + encodeURIComponent(idVaccine)
                                                                                                             + "&idHAP=" + encodeURIComponent(idHAP);

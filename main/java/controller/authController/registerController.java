@@ -74,7 +74,7 @@ public class registerController extends HttpServlet {
             session.setAttribute("dob", dob);
 //                session.setAttribute("User", u);
 
-            request.getRequestDispatcher("vertificationEmail").forward(request, response);
+            request.getRequestDispatcher("vertificationEmailController").forward(request, response);
 
         }
     }

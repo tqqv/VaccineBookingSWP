@@ -14,14 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Appointment;
-@WebServlet( urlPatterns = { "/makeAppointmentController" })
-public class makeAppointmentController extends HttpServlet {
+@WebServlet( urlPatterns = { "/MakeAppointmentController" })
+public class MakeAppointmentController extends HttpServlet {
 
    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        System.out.println("hello from f");
         String date = request.getParameter("date");
         String idVaccine = request.getParameter("idVaccine");
         String idHAP = request.getParameter("idHAP");
@@ -37,7 +36,7 @@ public class makeAppointmentController extends HttpServlet {
         
         HttpSession session = request.getSession(); // retrieve the session
         int userId = (int) session.getAttribute("id");
-        System.out.println("hello "+userId);
+        System.out.println("hello user i "+userId);
         
         int idAP = AppointmentProvisionDAO.getIdByBookingInfo(idVaccine, idHAP, date, timeRange);
         int price = VaccineProvisionDAO.getPrice(idVaccine, idHAP);
