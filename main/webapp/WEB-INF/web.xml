@@ -10,7 +10,7 @@
 	</welcome-file-list>
 
 	<servlet>
-		<servlet-name>vaccineController</servlet-name>
+		<servlet-name>VaccineController</servlet-name>
 		<servlet-class>controller.vaccineController</servlet-class>
 	</servlet>
 	<servlet>
@@ -27,8 +27,8 @@
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>vaccineController</servlet-name>
-		<url-pattern>/vaccineController</url-pattern>
+		<servlet-name>VaccineController</servlet-name>
+		<url-pattern>/VaccineController</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>AdminMangerController</servlet-name>
